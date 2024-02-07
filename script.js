@@ -14,7 +14,7 @@ let noCount = 0;
 yesButton.addEventListener("click", handleYesClick);
 
 noButton.addEventListener("click", function () {
-  if (play) {
+  if (play && noCount < MAX_IMAGES) {
     noCount++;
     const imageIndex = Math.min(noCount, MAX_IMAGES);
     changeImage(imageIndex);
@@ -25,6 +25,7 @@ noButton.addEventListener("click", function () {
     }
   }
 });
+
 
 function handleYesClick() {
   titleElement.innerHTML = "Yayyy!! :3";
