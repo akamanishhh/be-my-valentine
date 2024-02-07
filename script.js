@@ -53,8 +53,13 @@ function generateMessage(noCount) {
   return messages[messageIndex];
 }
 
-function changeImage(image) {
-  catImg.src = `img/cat-${image}.jpg`;
+function changeImage(imageIndex) {
+  // Ensure that it shows cat-2.jpg when clicking "Ummm Pretty please"
+  if (imageIndex >= MAX_IMAGES) {
+    catImg.src = `img/cat-2.jpg`;
+  } else {
+    catImg.src = `img/cat-${imageIndex}.jpg`;
+  }
 }
 
 function updateNoButtonText() {
